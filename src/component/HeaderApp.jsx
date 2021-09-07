@@ -17,7 +17,7 @@ const HeaderApp = ({ text, handleText, rating, handleRating, handleAdd }) => {
           onChange={handleText}
         />
       </form>
-      <AddMovie add={handleAdd} />
+      {/* <AddMovie add={handleAdd} /> */}
       <StarRating rating={rating} handleRating={handleRating} />
     </div>
   );

@@ -1,12 +1,13 @@
 import React from "react";
 
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating, handelRating }) => {
   function stars(rating) {
     let star = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
         star.push(
           <span
+            onClick={() => handelRating(i)}
             // onClick={() => handleRating(i)}
             style={{ color: "gold", cursor: "pointer" }}
           >
@@ -16,6 +17,7 @@ const StarRating = ({ rating }) => {
       } else
         star.push(
           <span
+            onClick={() => handelRating(i)}
             //onClick={() => handleRating(i)}
             style={{ color: "gray", cursor: "pointer" }}
           >
