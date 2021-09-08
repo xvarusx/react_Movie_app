@@ -5,6 +5,8 @@ import MovieList from "./component/MovieList";
 import "./App.css";
 import HeaderApp from "./component/HeaderApp";
 import { AddMovie } from "./component/AddMovie";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Desc } from "./component/Desc";
 
 function App() {
   const [text, setText] = useState("");
@@ -16,20 +18,34 @@ function App() {
 
   return (
     <div className="App">
-      <HeaderApp
-        rating={rating}
-        text={text}
-        handleText={handleText}
-        handleRating={handleRating}
-      ></HeaderApp>{" "}
-      <AddMovie add={handelAdd} />
-      <MovieList
-        movies={movies.filter((el) =>
-          el.name
-            .toLowerCase()
-            .includes(text.toLowerCase() && el.rating == rating)
-        )}
-      />
+      <BrowserRouter>
+        <HeaderApp
+          rating={rating}
+          text={text}
+          handleText={handleText}
+          handleRating={handleRating}
+        ></HeaderApp>{" "}
+        <AddMovie add={handelAdd} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <MovieList
+                movies={movies.filter(
+                  (el) =>
+                    el.name.toLowerCase().includes(text.toLowerCase()) &&
+                    el.rating >= rating
+                )}
+              />
+            )}
+          ></Route>
+          <Route
+            path="/movie/:id"
+            render={(props) => <Desc movies={movies} {...props} />}
+          ></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

@@ -5,6 +5,7 @@ export const moviesData = [
     rating: 5,
     name: "Star Wars: The Rise Of Skywalker",
     date: "December 2019",
+    desc: "desc1",
   },
   {
     id: Math.random(),
@@ -12,6 +13,7 @@ export const moviesData = [
     rating: 4,
     name: "Avengers: Infinity War",
     date: "April 2018",
+    desc: "desc2",
   },
   {
     id: Math.random(),
@@ -19,6 +21,7 @@ export const moviesData = [
     rating: 4,
     name: "Frozen II",
     date: "November 2019",
+    desc: "desc3",
   },
   {
     id: Math.random(),
@@ -27,6 +30,7 @@ export const moviesData = [
     rating: 3,
     name: "Fantastic Beasts and Where to Find Them",
     date: "November 2016",
+    desc: "desc3",
   },
   {
     id: Math.random(),
@@ -35,5 +39,6 @@ export const moviesData = [
     rating: 2,
     name: "Cat In The Hat",
     date: "November 2003",
+    desc: "desc4",
   },
 ];
